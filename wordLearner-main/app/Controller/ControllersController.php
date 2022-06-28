@@ -1,0 +1,24 @@
+<?php 
+class ControllersController extends AppController{
+    /**
+        action para view mensagem 
+        aqui não definiremos nenhum corpo pois
+        não se faz necessário
+    */
+    public function mensagem(){}
+    /**
+        função para a chamada ajax 
+        funcionamento muito simples
+        setamos uma string para uma
+        variável chamada 'mensagem'
+        que ficará disponível
+        na em ajax_msg.ctp
+    */
+    public function ajaxMsg(){
+        $this->layout = "ajax";
+        //aqui poderiamos ter, requisições a banco de dados
+        //validações, chamada à outas DataSources etc.  
+        $this->set("mensagem","Olá Mundo! CakePHP Ajax");    
+    }
+}
+?>
